@@ -1,0 +1,56 @@
+
+span{
+	
+	background-color :white;
+	margin: 20px;
+	border-radius: 10px;
+	
+}
+
+.column {
+    float: left;
+    width: 50%;
+	margin-left: auto;
+    margin-right: auto
+	
+}
+
+#images{
+   text-align:center;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.white{
+	background-color :white;
+	width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 20px;
+	width: 100%;
+}
+
+.cent {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+	padding: 20px;
+	padding-top: 30px;
+	height: 428px;
+	width: 590px;
+	text-align: bottom;
+}
+
+h2{
+	text-align: center;
+}
+
+h3{
+	text-align: center;
+}
+

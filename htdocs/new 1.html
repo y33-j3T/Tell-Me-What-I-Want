@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="file:///C:/xampp/htdocs/favicon1.ico" type="image/x-icon" />
+
+<head>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="styles.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tell Me What You Want :)</title>
+</head>
+<body class="w3-light-grey">
+ 
+        <script>
+		var XArray = [];
+		var devt;
+		
+		function bacToHome(){
+				location.href = "file:///C:/xampp/htdocs/mainpage.html"
+		}
+		
+
+		
+		function CalculateDiff(){
+		
+		var lengths = XArray.length;
+
+		
+		while  (lengths >= 1){
+				   devt = XArray[lengths] - XArray[0] ;
+				   console.log(devt);
+
+				   lengths--;
+				   
+				   }
+		
+			if(devt > 0){
+				$("#output").text("You like Left");	
+				location.href = "file:///C:/xampp/htdocs/rights.html"
+			}
+			else if(devt == null){
+			$("#output").text("You like No");	
+				location.href = "file:///C:/xampp/htdocs/mainpage.html"
+			}
+			
+			else {
+				$("#output").text("You like right");
+				location.href = "file:///C:/xampp/htdocs/lefts.html"
+
+			
+			}
+		}
+		
+		
+		
+        function uploadFile() {
+		
+            var blobFile = $('#filechooser')[0].files[0];
+            var formData = new FormData();
+			
+			
+			
+         
+            // upload image through form (jpg/jpeg/png)
+            formData.append("filename", blobFile);
+         
+            // change the access_key and secret_key here
+            formData.append("access_key", "9dcb8e1ca4ac3a01d96c");
+            formData.append("secret_key", "434c2c8be8dd7ef8234797fad070cb7893c94df9");
+         
+            //To use Jquery, you can download it from http://jquery.com/download/
+            //or include it from a CDN into your HTML.
+            $.ajax({
+               url: "https://face.recoqnitics.com/analyze",
+               type: "POST",
+               data: formData,
+               processData: false,
+               contentType: false, 
+               success: function(response) {
+			   
+			   var eyeleft = response.faces[0].landmarks[0].x;
+			   var eyeright = response.faces[0].landmarks[1].x;
+			   var midpoint = (eyeleft + eyeright)/2;
+			   
+			   
+			   
+			   
+			   
+		
+			   
+			   
+
+			   
+			   
+			   
+                   console.log(response);
+				   console.log(XArray);
+				   XArray.push(midpoint);
+				   
+				   
+				   
+				   
+				   
+                 $("#output").text(" uploaded image "+ XArray.length);
+				 
+				 
+               },
+               error: function(jqXHR, textStatus, errorMessage) {
+                   console.log(errorMessage); // Optional
+               }
+            });
+          }
+		  
+		  
+	
+                </script>
+				
+		
+	<div class="w3-content" style="max-width:1200px">
+
+	<header class="w3-container w3-center w3-padding-32"> 
+	<h1><b onclick="bacToHome()">Tell Me What I Want! =)</b></h1>
+	</header>
+				
+				
+	<div class="white w3-center">
+	
+	<div id="images">
+  <img class="cent" src="old2.jpg"/>
+    <img class="cent" src="new2.jpg"/>
+</div>
+
+<div class="row">
+  <div class="column">
+  <h2>A</h2>
+  </div>
+  <div class="column">
+    <h2>B</h2>
+</div>
+</div>
+	
+	
+    <button class="w3-button w3-padding-large w3-white w3-border w3-center" onclick="CalculateDiff()">Tell Me What I Want!</button>
+    <p id="output"></p>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+     </div>
+	 <input  id="filechooser" type="file" multiple/>
+    <button class="btn" onclick="uploadFile()">Upload!</button>
+ 
+    
+ 
+ 
+</body>
+</html>
