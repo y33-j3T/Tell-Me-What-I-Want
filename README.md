@@ -1,4 +1,4 @@
-# Tell Me What I Want
+# Tell Me What I Want (API deprecated, will fix soon)
 Web app that makes decision making for online shopping easy. :sunglasses:
 
 ## Contents
