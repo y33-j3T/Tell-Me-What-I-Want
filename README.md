@@ -1,12 +1,14 @@
-# Tell Me What I Want
+# Tell Me What I Want (API deprecated, will fix soon)
 Web app that makes decision making for online shopping easy. :sunglasses:
 
 ## Contents
-- [Introduction](#Introduction)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [Contributing](#Contributing)
-- [License](#License)
+- [Tell Me What I Want (API deprecated, will fix soon)](#tell-me-what-i-want-api-deprecated-will-fix-soon)
+  - [Contents](#contents)
+  - [Introduction](#introduction)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Introduction
 Tell Me What I Want is a project for an artificial intelligence hackathon, [A.I.CKATHON](https://www.aickathon.tech/) held in Malaysia in 2018. It is a web app to help you choose between two similar items during online shopping, thus reducing [decsion fatigue](https://en.wikipedia.org/wiki/Decision_fatigue). It utilizes a facial recognition API by [COQNITICS](http://coqnitics.com/) to track eye movement and tells users items that they subconsciously prefer based on the duration of their eyes lingering on each item. This project got us into top 10 among 40+ teams.
